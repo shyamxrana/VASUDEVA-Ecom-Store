@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VASUDEVA | Timeless Heritage. Modern Style.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./img logo/VASUDEVA-LOGO.png" type="favicon.png">
+</head>
+<body>
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-text">Product added to cart!</span>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically added here -->
+            <div class="empty-cart" id="emptyCart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <p>Add some products to get started</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <div class="cart-actions">
+                <a href="#" class="btn btn-secondary">Continue Shopping</a>
+                <a href="#" class="btn btn-primary">Proceed to Checkout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Utility Bar -->
+    <div class="utility-bar">
+        <div class="container utility-content">
+            <div class="free-shipping">
+                <i class="fas fa-shipping-fast"></i>
+                <span>Free shipping on orders over $100</span>
+            </div>
+            <div class="utility-selectors">
+                <div class="selector">
+                    <i class="fas fa-globe"></i>
+                    <select>
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                    </select>
+                </div>
+                <div class="selector">
+                    <i class="fas fa-dollar-sign"></i>
+                    <select>
+                        <option value="usd">USD</option>
+                        <option value="inr">INR</option>
+                        <option value="eur">EUR</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">VASUDE<span>VA</span></div>
+            
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#shop">Shop</a>
+                <a href="#collections">Collections</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            
+            <div class="header-icons">
+                <a href="#" class="icon">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="#" class="icon">
+                    <i class="far fa-heart"></i>
+                </a>
+                <a href="#" class="icon">
+                    <i class="far fa-user"></i>
+                </a>
+                <a href="#" class="icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+            
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Royal Roots. Modern Fits.</h1>
+            <p>Experience the perfect fusion of Indian heritage and contemporary style. Each piece tells a story of legacy, strength, and elegance.</p>
+            <div class="cta-buttons">
+                <a href="#shop" class="btn btn-primary">Shop Men</a>
+                <a href="#shop" class="btn btn-secondary">Shop Women</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="shop">
+        <div class="container">
+            <div class="section-title">
+                <h2>Shop by Category</h2>
+                <p>Discover our premium collections crafted with traditional artistry and modern design.</p>
+            </div>
+            
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Men's Collection">
+                    <div class="category-overlay">
+                        <h3>Men</h3>
+                        <p>Traditional & Contemporary</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://i.pinimg.com/1200x/5e/1b/cf/5e1bcf5e6cec6f6f607865e12c8da702.jpg" alt="Women's Collection">
+                    <div class="category-overlay">
+                        <h3>Women</h3>
+                        <p>Elegant & Graceful</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="New Arrivals">
+                    <div class="category-overlay">
+                        <h3>New Arrivals</h3>
+                        <p>Latest Styles</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Festive Collection">
+                    <div class="category-overlay">
+                        <h3>Festive Collection</h3>
+                        <p>Celebrate in Style</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section class="collections" id="collections">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Collections</h2>
+                <p>Each collection is inspired by the rich tapestry of Indian heritage, reimagined for the modern world.</p>
+            </div>
+            
+            <div class="collection-grid">
+                <div class="collection-card">
+                    <div class="collection-img">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ethnic Wear">
+                    </div>
+                    <div class="collection-content">
+                        <h3>Ethnic Wear</h3>
+                        <p>Traditional craftsmanship meets contemporary silhouettes.</p>
+                        <a href="#" class="collection-link">Explore Collection <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-img">
+                        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Contemporary Wear">
+                    </div>
+                    <div class="collection-content">
+                        <h3>Contemporary Wear</h3>
+                        <p>Everyday elegance infused with heritage motifs.</p>
+                        <a href="#" class="collection-link">Explore Collection <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-img">
+                        <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Limited Edition">
+                    </div>
+                    <div class="collection-content">
+                        <h3>Limited Edition</h3>
+                        <p>Mahabharata-inspired pieces with exclusive designs.</p>
+                        <a href="#" class="collection-link">Explore Collection <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Best Sellers</h2>
+                <p>Our most loved pieces, cherished by customers worldwide.</p>
+            </div>
+            
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story: Where Heritage Meets Modernity</h2>
+                    <p>Inspired by the legacy of the Mahabharata, VASUDEVA represents strength, elegance, and timelessness. Our name pays homage to Lord Krishna's father, symbolizing wisdom and heritage.</p>
+                    <p>We blend traditional Indian craftsmanship with contemporary design, creating clothing that honors our roots while fitting seamlessly into modern life. Each piece is thoughtfully designed to tell a story of cultural richness and sophisticated style.</p>
+                    <p>From intricately embroidered fabrics to minimalist silhouettes with traditional motifs, VASUDEVA offers a unique expression of Indian heritage for the global citizen.</p>
+                    <a href="#" class="btn btn-primary">Discover Our Journey</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="About VASUDEVA">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Customer Stories</h2>
+                <p>What our community says about the VASUDEVA experience.</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The craftsmanship on my VASUDEVA sherwani was exceptional. I received countless compliments at my brother's wedding. It perfectly blended traditional design with a modern fit."</p>
+                    <p class="testimonial-author">- Arjun Patel, New York</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join the VASUDEVA Legacy</h2>
+            <p>Subscribe to our newsletter for exclusive offers, early access to new collections, and stories from our heritage.</p>
+            
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                <button type="submit" class="btn newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">VASUDE<span>VA</span></div>
+                    <p>Timeless Heritage. Modern Style. A premium clothing brand inspired by Indian legacy, reimagined for contemporary living.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">Shop</h3>
+                    <ul>
+                        <li><a href="#">Men's Collection</a></li>
+                        <li><a href="#">Women's Collection</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Festive Collection</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">Company</h3>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Store Locator</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">Support</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 VASUDEVA. All rights reserved.</p>
+                <p>Inspired by Mahabharata | Crafted with Heritage</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
